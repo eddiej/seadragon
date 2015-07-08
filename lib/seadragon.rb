@@ -64,7 +64,7 @@ class Seadragon
   end
 
   ##
-  # Generates the DZI (Deep Zoom Image format) descriptor file.
+  # Generates the DZI (Deep Zoom Image format) descriptor file in JSON.
   ##
   def write_dzi_specification
     properties = {
@@ -83,7 +83,6 @@ class Seadragon
     FileUtils.mkdir(tiles_path) unless File.exists?(tiles_path)
     dzi_path = File.join(tiles_path, handle + ".dzi")
     
-
     File.open(dzi_path, 'w') do |f|
       f.write(JSON.pretty_generate(properties))
     end
