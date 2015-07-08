@@ -5,6 +5,8 @@ rvm:
 before_install:
   - gem install bundler -v 1.8
 
+script: 'bundle exec rspec'
+
 notifications:
   email:
     recipients:
