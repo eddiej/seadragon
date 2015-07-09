@@ -2,7 +2,10 @@ $LOAD_PATH.unshift File.expand_path('../../lib', __FILE__)
 
 # require 'coveralls'
 # Coveralls.wear!
-require 'rails/all'
+require 'rails'
+require 'action_view'
+require 'action_controller'
+require 'rspec/rails'
 require 'seadragon'
 
 RSpec.configure do |config|

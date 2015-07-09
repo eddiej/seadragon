@@ -92,7 +92,20 @@ describe Seadragon do
   private 
 
   def delete_generated_files
-    # FileUtils.rm_rf(subject.tiles_path) if File.exists?(subject.tiles_path)
+    FileUtils.rm_rf(subject.tiles_path) if File.exists?(subject.tiles_path)
   end
   
+end
+
+RSpec.describe Seadragon::SeadragonHelper, type: :helper do
+  it "raises an exception if the id param is missing" do
+    expect{helper.seadragon()}
+      .to raise_error(ArgumentError, 
+        "a target element must be passed via the id key")
+  end
+  it "raises an exception if the tileSources param is missing" do
+    expect{helper.seadragon(id: 'someid')}
+      .to raise_error(ArgumentError, 
+        "a tile source must be passed via the tileSources key")
+  end
 end

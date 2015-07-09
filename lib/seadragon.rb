@@ -133,4 +133,18 @@ class Seadragon
   end
 
 end
+
+module SeadragonHelper
+  def seadragon(options = {})
+    raise ArgumentError.new('a target element must be passed via the id key') unless options[:id]
+    raise ArgumentError.new('a tile source must be passed via the tileSources key') unless options[:tileSources]
+
+    options[:prefixUrl] ||= "/assets/openseadragon.github.io/"
+
+    script = javascript_tag("var viewer = OpenSeadragon(#{options.to_json});")
+  end
+end
+
+ActionView::Base.send :include, SeadragonHelper
+
 end
