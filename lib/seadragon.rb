@@ -5,7 +5,7 @@ require "seadragon/engine"
 
 module Seadragon
 
-class Seadragon
+class Slicer
   attr_accessor :source_path, :tiles_path, :handle, :tile_size, :overlap, 
     :quality, :format, :dzi_name, :source_image, :width, :height
 

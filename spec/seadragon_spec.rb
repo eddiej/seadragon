@@ -13,7 +13,7 @@ describe Seadragon do
     }
   }
   subject{
-    Seadragon::Seadragon.new(valid_parameters)
+    Seadragon::Slicer.new(valid_parameters)
   }
 
   it 'has a version number' do
@@ -23,12 +23,12 @@ describe Seadragon do
   describe 'initializer' do
     context 'invalid params' do
       it 'raises an exception if paths are missing' do
-        expect{Seadragon::Seadragon.new}
+        expect{Seadragon::Slicer.new}
           .to raise_error(ArgumentError, 
             "source and destination paths are required")
       end
       it 'raises an exception if a handle is missing' do
-        expect{Seadragon::Seadragon.new(source_path: 'a', tiles_path: 'b')}
+        expect{Seadragon::Slicer.new(source_path: 'a', tiles_path: 'b')}
           .to raise_error(ArgumentError, 
             "a handle is required")
       end
