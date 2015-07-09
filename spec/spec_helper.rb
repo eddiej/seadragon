@@ -1,7 +1,8 @@
 $LOAD_PATH.unshift File.expand_path('../../lib', __FILE__)
 
-# require 'coveralls'
-# Coveralls.wear!
+require 'coveralls'
+Coveralls.wear!
+
 require 'rails'
 require 'action_view'
 require 'action_controller'
