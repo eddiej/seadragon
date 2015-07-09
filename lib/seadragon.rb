@@ -21,6 +21,7 @@ class Seadragon
     @quality      = attributes[:quality] || 100
     @format       = attributes[:format] || 'jpg' 
 
+    raise ArgumentError.new("source file doesn't exist") unless File.exist? @source_path
     @source_image = Magick::Image.read(@source_path)[0] # an Image object.
     @width, @height = @source_image.columns, @source_image.rows # image dims
 
