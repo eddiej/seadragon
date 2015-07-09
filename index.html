@@ -10,7 +10,7 @@
     <link rel="stylesheet" type="text/css" href="stylesheets/github-light.css" media="screen">
     
     <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>    
-    <script src="javascript/screenfull.js"></script>
+    <script src="javascript/openseadragon.min.js"></script>
   </head>
   <body>
     <section class="page-header">
@@ -31,12 +31,16 @@ The Seadragon Gem provides everything you need to create and host your own Deep 
         Deep Zoom Image Examples
       </h3>
 
-      <p>
-       OpenSeadragon is an open-source, web-based viewer for displaying high-resolution zoomable images. A viewer is displayed by calling the OpenSeaddragon Javascript function, passing paths to a set of image tiles and a DZI descriptor file.
-       </p>
-       <p>
-      The library doesn't handle the creation of the required tile images or descriptor file. This gem provides methods for creating tiles and descriptor files, and a Rails helper method for rendering image viewers in your view templates.     
-      </p>
+
+
+<div id="openseadragon1" style="height: 350px; background:#ccc"></div>
+<script type="text/javascript">
+    var viewer = OpenSeadragon({
+        id: "openseadragon1",
+        prefixUrl: "images/icons/",
+        tileSources: "images/tiles/sky.dzi"
+    });
+</script>
 
 
       <footer class="site-footer">
