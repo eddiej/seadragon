@@ -92,7 +92,7 @@ describe Seadragon do
   private 
 
   def delete_generated_files
-    FileUtils.rm_rf(subject.tiles_path) if File.exists?(subject.tiles_path)
+    # FileUtils.rm_rf(subject.tiles_path) if File.exists?(subject.tiles_path)
   end
   
 end

@@ -1,6 +1,7 @@
 require 'rmagick'
 require 'json'
 require "seadragon/version"
+require "seadragon/engine"
 
 module Seadragon
 
