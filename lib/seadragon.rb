@@ -53,7 +53,7 @@ class Seadragon
           tile_file_path = File.join(current_level_dir, 
             "#{col_count}_#{row_count}.#{format}")
           tile_width, tile_height = tile_dimensions(x, y, tile_size, overlap)
-          save_tile(image, tile_file_path, x, y, tile_width, tile_height, quality)
+          save_tile(image, tile_file_path, x, y, tile_width, tile_height, quality) unless File.exist? tile_file_path
           y += (tile_height - (2 * overlap))
           row_count += 1
         end
